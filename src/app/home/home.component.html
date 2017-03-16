@@ -1,3 +1,8 @@
-<p>
-  home works!
-</p>
+<p>Welcome User</p>
+<ul class="requests">
+  <li *ngFor="let request of requests"
+    [class.selected]="request === selectedRequest"
+    (click)="onSelect(request)">
+    {{request.title}} {{request.price}}
+  </li>
+</ul>
