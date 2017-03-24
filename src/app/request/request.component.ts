@@ -22,11 +22,11 @@ export class RequestComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params
-      .switchMap((params: Params) => this.requestService.getRequestsById(+params['id']))
-      .subscribe(request => this.request = request);
+    var id: number;
+    id = this.route.params['id'];
+    alert(id);
   }
-
+  
   goBack() {
     this.location.back()
   }

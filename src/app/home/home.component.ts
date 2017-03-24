@@ -36,4 +36,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/singleRequest', this.selectedRequest.id]);
   }
 
+  newRequest(): void {
+    this.router.navigate(["/newRequest"]);
+  }
+
 }

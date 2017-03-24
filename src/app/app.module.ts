@@ -8,19 +8,22 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RequestService } from './request.service';
 import { RequestComponent } from './request/request.component';
+import { NewRequestComponent } from './new-request/new-request.component';
 
 //import { AppRoutingModule } from './app-routing.module';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'singleRequest/:id', component: RequestComponent }
+  { path: 'singleRequest/:id', component: RequestComponent },
+  { path: 'newRequest', component: NewRequestComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    RequestComponent
+    RequestComponent,
+    NewRequestComponent
   ],
   imports: [
     BrowserModule,

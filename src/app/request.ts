@@ -10,5 +10,5 @@ export class Request {
     price: number;
     adress: string;
     dTime: String;
-    offers: Offer[];
+    //offers: Offer[];
 }
