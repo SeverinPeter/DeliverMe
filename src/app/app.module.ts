@@ -6,33 +6,50 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { RequestService } from './request.service';
+import { RequestService } from './_services/request.service';
 import { RequestComponent } from './request/request.component';
 import { NewRequestComponent } from './new-request/new-request.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { fakeBackendProvider } from './_helpers/fake-backend';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
+import { routing }        from './app-routing.module';
+ 
+import { AlertComponent } from './_directives/alert.component';
+import { AuthGuard } from './_guards/auth.guard';
+import { AlertService } from './_services/alert.service';
+import { AuthenticationService } from './_services/authentication.service';
+import { UserService } from './_services/user.service';
 
 //import { AppRoutingModule } from './app-routing.module';
-
-const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'singleRequest/:id', component: RequestComponent },
-  { path: 'newRequest', component: NewRequestComponent}
-]
 
 @NgModule({
   declarations: [
     AppComponent,
+    AlertComponent,
     HomeComponent,
     RequestComponent,
-    NewRequestComponent
+    NewRequestComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    //AppRoutingModule
-    RouterModule.forRoot(routes)
+    routing,
+    RouterModule
   ],
-  providers: [RequestService],
+  providers: [
+        AuthGuard,
+        AlertService,
+        AuthenticationService,
+        UserService,
+        fakeBackendProvider,
+        MockBackend,
+        BaseRequestOptions
+  ],
   bootstrap: [AppComponent]
 })
 

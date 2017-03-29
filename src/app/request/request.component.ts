@@ -4,7 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
 
 import { Request } from '../request';
-import { RequestService } from '../request.service';
+import { RequestService } from '../_services/request.service';
 
 @Component({
   selector: 'app-request',
@@ -24,7 +24,6 @@ export class RequestComponent implements OnInit {
   ngOnInit() {
     var id: number;
     id = this.route.params['id'];
-    alert(id);
   }
   
   goBack() {

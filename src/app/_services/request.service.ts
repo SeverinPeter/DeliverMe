@@ -1,6 +1,6 @@
-import { Request } from './request';
-import { REQUESTS } from './mock-requests';
-import { Offer } from './offer';
+import { Request } from '../request';
+import { REQUESTS } from '../mock-requests';
+import { Offer } from '../offer';
 import { Injectable } from '@angular/core';
 
 @Injectable()
