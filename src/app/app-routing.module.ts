@@ -8,13 +8,14 @@ import { RequestComponent } from './request/request.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { NewRequestComponent } from './new-request/new-request.component';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'home', component: HomeComponent },
     { path: 'singleRequest/:id', component: RequestComponent },
+    { path: 'newRequest', component: NewRequestComponent},
     { path: '**', redirectTo: '' }
 ];
 
